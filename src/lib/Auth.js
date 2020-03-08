@@ -59,16 +59,16 @@ class AuthProvider extends React.Component {
       );
   }
 
-  signup = (username, password) => {
+  signup = (email, password, userName, isAdmin) => {
     authService
-      .signup({ username, password })
+      .signup({ email, password, userName, isAdmin})
       .then(user => this.setState({ isLoggedIn: true, user }))
       .catch(err => console.log(err));
   };
 
-  login = (username, password) => {
+  login = (email, password) => {
     authService
-      .login({ username, password })
+      .login({ email, password })
       .then(user => this.setState({ isLoggedIn: true, user }))
       .catch(err => console.log(err));
   };
