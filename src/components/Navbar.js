@@ -35,6 +35,15 @@ class Navbar extends Component {
                     <Link to={"/notice"}>
                       <h4> Notice </h4>
                     </Link>
+
+                    <Link to={"/startApplication"}>
+                      <h4> Start Application </h4>
+                    </Link>
+
+                    <Link to={"/applicationStatus"}>
+                      <h4> Your Status </h4>
+                    </Link>
+                    
                     <h4>Find Contacts</h4>
                     <button onClick={logout}>Logout</button>
                   </>
