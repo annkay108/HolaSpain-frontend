@@ -3,12 +3,14 @@ import { Switch, Route }    from "react-router-dom";
 
 import "./App.css";
 
-import Private from "./pages/Private";
-import Profile from "./pages/Profile";
-import Signup  from "./pages/Signup";
-import Login   from "./pages/Login";
-import Home    from "./pages/Home";
-import User    from './pages/User';
+import AddTheNotice from "./pages/AddTheNotice";
+import CheckIfAdmin from "./pages/CheckIfAdmin";
+import UserNotice   from "./pages/UserNotice";
+import Profile      from "./pages/Profile";
+import Signup       from "./pages/Signup";
+import Login        from "./pages/Login";
+import Home         from "./pages/Home";
+import User         from './pages/User';
 
 import PrivateRoute from "./components/PrivateRoute";
 import AnonRoute    from "./components/AnonRoute";
@@ -26,9 +28,11 @@ class App extends Component {
           <AnonRoute exact path="/signup" component={Signup} />
           <AnonRoute exact path="/login" component={Login} />
 
-          <PrivateRoute exact path = "/private" component={Private} />
+          <PrivateRoute exact path = "/private" component={CheckIfAdmin} />
           <PrivateRoute exact path = "/profile/:id" component={Profile}/>
           <PrivateRoute exact path = "/user" component={User}/>
+          <PrivateRoute exact path = "/Addthenotice" component={AddTheNotice}/>
+          <PrivateRoute exact path = "/notice" component={UserNotice}/>
         </Switch>
       </div>
     );

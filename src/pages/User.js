@@ -9,7 +9,7 @@ class User extends Component {
         userById: null
     }
 
-    componentWillMount(){
+    componentDidMount(){
         userService
             .getAllUser()
             .then(data => {
@@ -69,8 +69,8 @@ class User extends Component {
                         this.state.userList ?
                             this.state.userList[index].requests.map(el =>{
                                 return(
-                                    <div key={el}>
-                                        <h3>{el}</h3>
+                                    <div key={el._id}>
+                                        <h3>{el.userName}</h3>
                                         <button onClick={()=>{this.Accept(el)}}>Accept</button>
                                     </div>
                                 )
@@ -84,8 +84,8 @@ class User extends Component {
                         this.state.userList ?
                             this.state.userList[index].pending.map(el =>{
                                 return(
-                                    <div key={el}>
-                                        <h3>{el}</h3>
+                                    <div key={el._id}>
+                                        <h3>{el.userName}</h3>
                                     </div>
                                 )
                             })
@@ -98,9 +98,9 @@ class User extends Component {
                         this.state.userList ?
                             this.state.userList[index].friends.map(el =>{
                                 return(
-                                    <div key={el}>
-                                        <Link to={`/profile/${el}`}>
-                                            <h3>{el}</h3>
+                                    <div key={el._id}>
+                                        <Link to={`/profile/${el._id}`}>
+                                            <h3>{el.userName}</h3>
                                         </Link>
                                     </div>
                                 )

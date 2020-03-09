@@ -4,7 +4,7 @@ import { withAuth } from "./../lib/Auth";
 
 class Navbar extends Component {
   render() {
-    const {logout, isLoggedIn } = this.props;
+    const { logout, isLoggedIn } = this.props;
 
     return (
       <nav className="navbar">
@@ -12,19 +12,32 @@ class Navbar extends Component {
           <h4>Home</h4>
         </Link>
 
-        <Link to={"/user"}>
-          <h4>User</h4>
-        </Link>
+        {isLoggedIn ?
+                  this.props.user.isAdmin?
+                  (
+                    <>
+                      <Link to={"/Addthenotice"}>
+                        <h4>Add the Notice</h4>
+                      </Link>
 
-        <Link to={'/notice'}>
-          <h4> Notice </h4>
-        </Link>
-        
-        {isLoggedIn ? (
-          <>
-            <h4>Find Contacts</h4>
-            <button onClick={logout}>Logout</button>
-          </>
+                      <Link to={"/seeApplication"}>
+                        <h4> Applications </h4>
+                      </Link>
+                      <button onClick={logout}>Logout</button>
+                    </>
+                  ):
+                (
+                  <>
+                    <Link to={"/user"}>
+                      <h4>User</h4>
+                    </Link>
+
+                    <Link to={"/notice"}>
+                      <h4> Notice </h4>
+                    </Link>
+                    <h4>Find Contacts</h4>
+                    <button onClick={logout}>Logout</button>
+                  </>
         ) : (
           <>
             <Link to="/login">

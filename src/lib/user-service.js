@@ -22,6 +22,7 @@ class User{
         return this.auth.get(`/user/${id}`,{}).then(({data})=> data);
     }
 
+    // accept the request by id
     AcceptContact(id){
         return this.auth.post(`/user/accept/${id}`).then(()=>console.log("something"));
     }

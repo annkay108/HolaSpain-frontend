@@ -8,7 +8,7 @@ class Profile extends Component {
         userList: null
     }
 
-    componentWillMount(){
+    componentDidMount(){
         userService
         .getUserById(this.state.id)
         .then(data =>{
