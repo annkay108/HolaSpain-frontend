@@ -1,16 +1,18 @@
 import React, { Component } from "react";
+import { Switch, Route }    from "react-router-dom";
+
 import "./App.css";
-import { Switch, Route } from "react-router-dom";
 
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import Signup from "./pages/Signup";
-import Login from "./pages/Login";
 import Private from "./pages/Private";
-import User from './pages/User';
+import Profile from "./pages/Profile";
+import Signup  from "./pages/Signup";
+import Login   from "./pages/Login";
+import Home    from "./pages/Home";
+import User    from './pages/User';
 
-import AnonRoute from "./components/AnonRoute";
 import PrivateRoute from "./components/PrivateRoute";
+import AnonRoute    from "./components/AnonRoute";
+import Navbar       from "./components/Navbar";
 
 class App extends Component {
   render() {
@@ -24,7 +26,8 @@ class App extends Component {
           <AnonRoute exact path="/signup" component={Signup} />
           <AnonRoute exact path="/login" component={Login} />
 
-          <PrivateRoute exact path="/private" component={Private} />
+          <PrivateRoute exact path = "/private" component={Private} />
+          <PrivateRoute exact path = "/profile/:id" component={Profile}/>
           <PrivateRoute exact path = "/user" component={User}/>
         </Switch>
       </div>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {withAuth} from "./../lib/Auth";
+import { Link } from "react-router-dom";
 import userService from "../lib/user-service";
 
 class User extends Component {
@@ -40,7 +41,7 @@ class User extends Component {
 
     componentDidUpdate(prevState, prevProps) {
 
-      }
+    }
 
     render() {
         let index = -1;
@@ -55,7 +56,7 @@ class User extends Component {
                     {
                         return(
                             <div key={el._id}>
-                                <h1>{el.userName}</h1>
+                                <h3>{el.userName}</h3>
                                 <button onClick={()=>{this.AddUser(el._id)}}>Add Contact</button>
                             </div>
                         )
@@ -69,7 +70,7 @@ class User extends Component {
                             this.state.userList[index].requests.map(el =>{
                                 return(
                                     <div key={el}>
-                                        <h1>{el}</h1>
+                                        <h3>{el}</h3>
                                         <button onClick={()=>{this.Accept(el)}}>Accept</button>
                                     </div>
                                 )
@@ -84,7 +85,7 @@ class User extends Component {
                             this.state.userList[index].pending.map(el =>{
                                 return(
                                     <div key={el}>
-                                        <h1>{el}</h1>
+                                        <h3>{el}</h3>
                                     </div>
                                 )
                             })
@@ -98,7 +99,9 @@ class User extends Component {
                             this.state.userList[index].friends.map(el =>{
                                 return(
                                     <div key={el}>
-                                        <h1>{el}</h1>
+                                        <Link to={`/profile/${el}`}>
+                                            <h3>{el}</h3>
+                                        </Link>
                                     </div>
                                 )
                             })
