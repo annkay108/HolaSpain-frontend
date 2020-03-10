@@ -92,6 +92,7 @@ class User extends Component {
                         :null
                     }
                 </div>
+                
                 <div>
                     <h1>These are id of your friends</h1>
                     {
