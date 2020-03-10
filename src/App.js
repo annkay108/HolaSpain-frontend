@@ -9,6 +9,7 @@ import ApplicationList   from "./pages/ApplicationList";
 import AddTheNotice      from "./pages/AddTheNotice";
 import CheckIfAdmin      from "./pages/CheckIfAdmin";
 import UserNotice        from "./pages/UserNotice";
+import SetStatus         from "./pages/SetStatus";
 import Profile           from "./pages/Profile";
 import Signup            from "./pages/Signup";
 import Login             from "./pages/Login";
@@ -18,6 +19,7 @@ import User              from './pages/User';
 import PrivateRoute from "./components/PrivateRoute";
 import AnonRoute    from "./components/AnonRoute";
 import Navbar       from "./components/Navbar";
+import MyProfile from "./pages/MyProfile";
 
 class App extends Component {
   render() {
@@ -39,6 +41,8 @@ class App extends Component {
           <PrivateRoute exact path = "/startApplication" component={StartApplication}/>
           <PrivateRoute exact path = "/applicationStatus" component ={ApplicationStatus}/>
           <PrivateRoute exact path = "/applicationList" component ={ApplicationList}/>
+          <PrivateRoute exact path = "/myProfile" component ={MyProfile}/>
+          <PrivateRoute exact path = "/setStatus/:id" component ={SetStatus}/>
         </Switch>
       </div>
     );

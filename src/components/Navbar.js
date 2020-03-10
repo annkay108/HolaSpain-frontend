@@ -44,6 +44,10 @@ class Navbar extends Component {
                       <h4> Your Status </h4>
                     </Link>
 
+                    <Link to={"/myProfile"}>
+                      <h4> My Profile</h4>
+                    </Link>
+
                     <h4>Find Contacts</h4>
                     <button onClick={logout}>Logout</button>
                   </>

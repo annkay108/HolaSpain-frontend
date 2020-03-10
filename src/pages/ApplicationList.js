@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import userService from "./../lib/user-service";
+import { Link } from "react-router-dom";
 import { withAuth } from "./../lib/Auth";
 
 class ApplicationList extends Component {
@@ -26,7 +27,7 @@ class ApplicationList extends Component {
                             return(
                                 <div key={el._id}>
                                     <h3>{el.userName}</h3>
-                                    <button onClick={()=>console.log("something")}>Set Status</button>
+                                    <Link to={`/setStatus/${el._id}`}>Set Status</Link>
                                 </div>
                             )
                         }

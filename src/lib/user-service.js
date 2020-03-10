@@ -30,6 +30,10 @@ class User{
     setStatus(){
         return this.auth.post("/user/setstatus").then(()=>console.log("set the status to true"));
     }
+
+    updateOne(id,{userName, number, city}){
+        return this.auth.put(`/user/${id}`,{userName, number, city}).then(()=>console.log("updated the user profile"));
+    }
 }
 
 const userService = new User();

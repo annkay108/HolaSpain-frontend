@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { withAuth } from "./../lib/Auth";
 import Private      from "./Private";
 import AdminHome    from "./AdminHome";
-import PrivateRoute from "./../components/PrivateRoute";
 
 class CheckIfAdmin extends Component {
     state={

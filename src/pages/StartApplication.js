@@ -10,7 +10,7 @@ class StartApplication extends Component {
         imageUrl: null,
         applicationUrl: null,
         documentUrl: null,
-        appStatus: false
+        appStatus: null
     }
     handleImageChange =(event) => {
         const file = event.target.files[0];
