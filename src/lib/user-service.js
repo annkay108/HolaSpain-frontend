@@ -3,7 +3,7 @@ import axios from 'axios';
 class User{
     constructor(){
         this.auth = axios.create({
-            baseURL: "http://localhost:5000",
+            baseURL: process.env.REACT_APP_API_URL,
             withCredentials: true
         });
     }
@@ -25,6 +25,10 @@ class User{
     // accept the request by id
     AcceptContact(id){
         return this.auth.post(`/user/accept/${id}`).then(()=>console.log("something"));
+    }
+
+    setStatus(){
+        return this.auth.post("/user/setstatus").then(()=>console.log("set the status to true"));
     }
 }
 

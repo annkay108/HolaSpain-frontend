@@ -5,6 +5,7 @@ import "./App.css";
 
 import ApplicationStatus from "./pages/ApplicationStatus";
 import StartApplication  from "./pages/StartApplication";
+import ApplicationList   from "./pages/ApplicationList";
 import AddTheNotice      from "./pages/AddTheNotice";
 import CheckIfAdmin      from "./pages/CheckIfAdmin";
 import UserNotice        from "./pages/UserNotice";
@@ -37,6 +38,7 @@ class App extends Component {
           <PrivateRoute exact path = "/notice" component={UserNotice}/>
           <PrivateRoute exact path = "/startApplication" component={StartApplication}/>
           <PrivateRoute exact path = "/applicationStatus" component ={ApplicationStatus}/>
+          <PrivateRoute exact path = "/applicationList" component ={ApplicationList}/>
         </Switch>
       </div>
     );

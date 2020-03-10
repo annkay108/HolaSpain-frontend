@@ -71,7 +71,7 @@ class User extends Component {
                                 return(
                                     <div key={el._id}>
                                         <h3>{el.userName}</h3>
-                                        <button onClick={()=>{this.Accept(el)}}>Accept</button>
+                                        <button onClick={()=>{this.Accept(el._id)}}>Accept</button>
                                     </div>
                                 )
                             })

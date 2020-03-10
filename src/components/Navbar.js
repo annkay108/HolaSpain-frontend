@@ -20,7 +20,7 @@ class Navbar extends Component {
                         <h4>Add the Notice</h4>
                       </Link>
 
-                      <Link to={"/seeApplication"}>
+                      <Link to={"/applicationList"}>
                         <h4> Applications </h4>
                       </Link>
                       <button onClick={logout}>Logout</button>
@@ -43,7 +43,7 @@ class Navbar extends Component {
                     <Link to={"/applicationStatus"}>
                       <h4> Your Status </h4>
                     </Link>
-                    
+
                     <h4>Find Contacts</h4>
                     <button onClick={logout}>Logout</button>
                   </>
