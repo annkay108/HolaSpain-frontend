@@ -11,7 +11,6 @@ class ApplicationStatus extends Component {
     componentDidMount(){
         userService.getUserById(this.state.id)
         .then(data => this.setState({currentUser: data}))
-        console.log(this.state.current)
     }
 
     render() {
