@@ -27,6 +27,9 @@ class ApplicationList extends Component {
                             return(
                                 <div key={el._id}>
                                     <h3>{el.userName}</h3>
+                                    <img src={`${el.imageUrl}`} alt="userimage"/><br/>
+                                    <a href ={`${el.documentUrl}`} download="document">Document</a> <br/>
+                                    <a href ={`${el.applicationUrl}`} download="application">Application</a> <br />
                                     <Link to={`/setStatus/${el._id}`}>Set Status</Link>
                                 </div>
                             )
