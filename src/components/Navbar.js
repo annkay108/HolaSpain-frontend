@@ -25,7 +25,7 @@ class Navbar extends Component {
                       <Link to={"/applicationList"} className="home-btn">
                         <h4> Applications </h4>
                       </Link>
-                      <button onClick={logout}>Logout</button>
+                      <button className="logout" onClick={logout}>Logout</button>
                     </>
                   ):
                 (

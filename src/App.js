@@ -13,7 +13,7 @@ import SetStatus         from "./pages/SetStatus";
 import Profile           from "./pages/Profile";
 import Signup            from "./pages/Signup";
 import Login             from "./pages/Login";
-import Home              from "./pages/Home";
+import Home            from "./pages/Home";
 import User              from './pages/User';
 
 import PrivateRoute from "./components/PrivateRoute";
@@ -24,7 +24,7 @@ import MyProfile from "./pages/MyProfile";
 class App extends Component {
   render() {
     return (
-      <div className="container">
+      <div>
         <Navbar />
 
         <Switch>

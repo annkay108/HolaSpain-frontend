@@ -59,7 +59,12 @@ class MyProfile extends Component {
 
     userService.updateOne(id, updatedUser)
     .then(() => {
-        console.log("updated the profile");
+        userService.getUserById(id)
+        .then((user)=>{
+          const { userName, number, imageUrl, city} = user;
+
+          this.setState({userName, number, imageUrl, city})
+        })
       })
     .catch(err => {
       // console.log(err)
@@ -69,15 +74,16 @@ class MyProfile extends Component {
 
 
   render() {
-    const { userName, number, image, city} = this.state;
+    const { userName, number, imageUrl, city} = this.state;
 
     return (
-      <div className="container">
+      <div className="mui-container">
         <section className="section">
           <div className="page-body">
+            <img src={imageUrl} alt="profile"/>
             <h3 className="title is-3">Edit profile</h3>
             <form onSubmit={this.handleFormSubmit} encType="multipart/form-data">
-
+              <div className="mui-panel login">
               <div className="field">
                 <label className="label">Profile picture</label>
                 <div className="control">
@@ -86,6 +92,8 @@ class MyProfile extends Component {
                     name="imageUrl"
                     onChange={this.handleImageChange}
                   />
+                  <br/>
+                  <br/>
                 </div>
               </div>
 
@@ -128,10 +136,10 @@ class MyProfile extends Component {
                 </div>
               </div>
 
-              <div className="buttons bottom-buttons">
-                  <button type="submit" className="button is-link is-light">Save changes</button>
+              <div className="button-container">
+                  <button type="submit" className="mui-btn mui-btn--danger mui-btn--raised red">Save changes</button>
               </div>
- 
+              </div>
             </form>
           </div>
         </section>

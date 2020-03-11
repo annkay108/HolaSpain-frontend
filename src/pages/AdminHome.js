@@ -4,8 +4,8 @@ import {withAuth} from "./../lib/Auth";
 class AdminHome extends Component {
     render() {
         return (
-            <div>
-                Hello admin
+            <div className="Home">
+                <h1>Welcome Admin</h1>
             </div>
         )
     }

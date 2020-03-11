@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withAuth } from "./../lib/Auth";
+import { Link } from "react-router-dom";
 
 class Login extends Component {
   state = { email: "", password: "" };
@@ -20,7 +21,7 @@ class Login extends Component {
     const { email, password } = this.state;
 
     return (
-      <div class="mui-container">
+      <div className="mui-container">
         <h1>Login</h1>
 
         <form onSubmit={this.handleFormSubmit}>
@@ -41,15 +42,17 @@ class Login extends Component {
               onChange={this.handleChange}
             />
             <br />
-            <div className='button-container'>
+            <div className="button-container">
               <input
-                class="mui-btn mui-btn--danger mui-btn--raised red"
+                className="mui-btn mui-btn--danger mui-btn--raised red"
                 type="submit"
                 value="Login"
               />
             </div>
           </div>
         </form>
+        <p>Don't have an account?</p>
+        <Link to={"/signup"}> Signup</Link>
       </div>
     );
   }

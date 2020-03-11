@@ -15,6 +15,10 @@ class Notice{
     getAllNotice(){
         return this.auth.get("/notice",{}).then(({data})=> data);
     }
+
+    deleteNoticeById(id){
+        return this.auth.delete(`/notice/delete/${id}`,{}).then(console.log("deleted"));
+    }
 }
 
 const noticeService = new Notice();

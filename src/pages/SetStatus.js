@@ -11,9 +11,10 @@ class SetStatus extends Component {
     currentUser: null
   };
 
-  componentDidMount(){
-    userService.getUserById(this.state.id)
-    .then(data=> this.setState({currentUser: data}))
+  componentDidMount() {
+    userService
+      .getUserById(this.state.id)
+      .then(data => this.setState({ currentUser: data }));
   }
 
   handleFormSubmit = event => {
@@ -21,7 +22,7 @@ class SetStatus extends Component {
     const { title, description } = this.state;
 
     setstatusService
-      .setStatusById(this.state.id,{ title, description })
+      .setStatusById(this.state.id, { title, description })
       .then(console.log("status has been set"))
       .catch(err => console.log(err));
   };
@@ -32,26 +33,32 @@ class SetStatus extends Component {
   };
 
   render() {
-    const {title, description} = this.state;  
+    const { title, description } = this.state;
     return (
-      <div>
+      <div className="mui-container">
         <h1>Set Status</h1>
         <form onSubmit={this.handleFormSubmit}>
-          <label>Title:</label>
-          <input
-            type="text"
-            name="title"
-            value={title}
-            onChange={this.handleChange}
-          />
+          <div className="mui-panel login">
+            <label>Title:</label>
+            <input
+              type="text"
+              name="title"
+              value={title}
+              onChange={this.handleChange}
+            />
 
-          <label>Description:</label>
-          <textarea
-            name="description"
-            value={description}
-            onChange={this.handleChange}
-          ></textarea>
-          <input type="submit" value="Submit" />
+            <label>Description:</label>
+            <textarea
+              name="description"
+              value={description}
+              onChange={this.handleChange}
+            ></textarea>
+            <div className="button-container">
+            <input 
+            className="mui-btn mui-btn--danger mui-btn--raised red"
+            type="submit" value="Submit" />
+            </div>
+          </div>
         </form>
       </div>
     );
