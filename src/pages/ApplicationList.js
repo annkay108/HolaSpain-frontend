@@ -25,9 +25,9 @@ class ApplicationList extends Component {
                     this.state.userList.map(el =>{
                         if(el.hasApplied){
                             return(
-                                <div key={el._id}>
-                                    <h3>{el.userName}</h3>
+                                <div className ="user-list" key={el._id}>
                                     <img src={`${el.imageUrl}`} alt="userimage"/><br/>
+                                    <h3>{el.userName}</h3>
                                     <a href ={`${el.documentUrl}`} download="document">Document</a> <br/>
                                     <a href ={`${el.applicationUrl}`} download="application">Application</a> <br />
                                     <Link to={`/setStatus/${el._id}`}>Set Status</Link>
