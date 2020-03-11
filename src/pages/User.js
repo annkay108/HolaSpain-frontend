@@ -67,7 +67,7 @@ class User extends Component {
                     })
                 : null}
                 <div>    
-                    <h1 className="user-list-name">These are id of your request</h1>
+                    <h1 className="user-list-name">Requests</h1>
                     {
                         this.state.userList ?
                             this.state.userList[index].requests.map(el =>{
@@ -84,7 +84,7 @@ class User extends Component {
                     }
                 </div>
                 <div>
-                    <h1 className="user-list-name">These are id of your pending</h1>
+                    <h1 className="user-list-name">Pending</h1>
                     {
                         this.state.userList ?
                             this.state.userList[index].pending.map(el =>{
@@ -92,6 +92,7 @@ class User extends Component {
                                     <div className="user-list" key={el._id}>
                                         <img src={`${el.imageUrl}`} alt="image page"/>
                                         <h3>{el.userName}</h3>
+                                        <h3>{el.city}</h3>
                                     </div>
                                 )
                             })
@@ -100,7 +101,7 @@ class User extends Component {
                 </div>
 
                 <div>
-                    <h1 className="user-list-name">These are id of your friends</h1>
+                    <h1 className="user-list-name">Contact List</h1>
                     {
                         this.state.userList ?
                             this.state.userList[index].friends.map(el =>{
