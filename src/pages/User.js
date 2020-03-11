@@ -50,28 +50,33 @@ class User extends Component {
         }
         return (
             <div>
+                <h1 className="user-list-name"> Find Contact</h1>
                 {this.state.userList ? 
                     this.state.userList.map(el => {
                     if(!el.isAdmin && el._id !== this.props.user._id)
                     {
                         return(
-                            <div key={el._id}>
+                            <div className="user-list" key={el._id}>
+                                <img src={`${el.imageUrl}`} alt="image page"/>
                                 <h3>{el.userName}</h3>
-                                <button onClick={()=>{this.AddUser(el._id)}}>Add Contact</button>
+                                <h3>{el.city}</h3>
+                                <button className="user-button" onClick={()=>{this.AddUser(el._id)}}>Add Contact</button>
                             </div>
                         )
                     }
                     })
                 : null}
                 <div>    
-                    <h1>These are id of your request</h1>
+                    <h1 className="user-list-name">These are id of your request</h1>
                     {
                         this.state.userList ?
                             this.state.userList[index].requests.map(el =>{
                                 return(
-                                    <div key={el._id}>
+                                    <div className="user-list" key={el._id}>
+                                        <img src={`${el.imageUrl}`} alt="image page"/>
                                         <h3>{el.userName}</h3>
-                                        <button onClick={()=>{this.Accept(el._id)}}>Accept</button>
+                                        <h3>{el.city}</h3>
+                                        <button className="user-button" onClick={()=>{this.Accept(el._id)}}>Accept</button>
                                     </div>
                                 )
                             })
@@ -79,12 +84,13 @@ class User extends Component {
                     }
                 </div>
                 <div>
-                    <h1>These are id of your pending</h1>
+                    <h1 className="user-list-name">These are id of your pending</h1>
                     {
                         this.state.userList ?
                             this.state.userList[index].pending.map(el =>{
                                 return(
-                                    <div key={el._id}>
+                                    <div className="user-list" key={el._id}>
+                                        <img src={`${el.imageUrl}`} alt="image page"/>
                                         <h3>{el.userName}</h3>
                                     </div>
                                 )
@@ -92,16 +98,18 @@ class User extends Component {
                         :null
                     }
                 </div>
-                
+
                 <div>
-                    <h1>These are id of your friends</h1>
+                    <h1 className="user-list-name">These are id of your friends</h1>
                     {
                         this.state.userList ?
                             this.state.userList[index].friends.map(el =>{
                                 return(
-                                    <div key={el._id}>
+                                    <div className="user-list" key={el._id}>
+                                        <img src={`${el.imageUrl}`} alt="image page"/>
+                                        <h3>{el.userName}</h3>
                                         <Link to={`/profile/${el._id}`}>
-                                            <h3>{el.userName}</h3>
+                                            <h3>View Profile</h3>
                                         </Link>
                                     </div>
                                 )

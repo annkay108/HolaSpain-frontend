@@ -20,27 +20,35 @@ class Login extends Component {
     const { email, password } = this.state;
 
     return (
-      <div>
+      <div class="mui-container">
         <h1>Login</h1>
 
         <form onSubmit={this.handleFormSubmit}>
-          <label>Email:</label>
-          <input
-            type="text"
-            name="email"
-            value={email}
-            onChange={this.handleChange}
-          />
-
-          <label>Password:</label>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={this.handleChange}
-          />
-
-          <input type="submit" value="Login" />
+          <div className="mui-panel login">
+            <label>Email:</label>
+            <input
+              type="text"
+              name="email"
+              value={email}
+              onChange={this.handleChange}
+            />
+            <br />
+            <label>Password:</label>
+            <input
+              type="password"
+              name="password"
+              value={password}
+              onChange={this.handleChange}
+            />
+            <br />
+            <div className='button-container'>
+              <input
+                class="mui-btn mui-btn--danger mui-btn--raised red"
+                type="submit"
+                value="Login"
+              />
+            </div>
+          </div>
         </form>
       </div>
     );

@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import { withAuth } from "./../lib/Auth";
 
 class Signup extends Component {
-  state = { email: "", password: "", userName:"", isAdmin:false};
+  state = { email: "", password: "", userName: "", isAdmin: false };
 
   handleFormSubmit = event => {
     event.preventDefault();
-    const { email, password, userName, isAdmin} = this.state;
+    const { email, password, userName, isAdmin } = this.state;
     this.props.signup(email, password, userName, isAdmin);
   };
 
@@ -19,35 +19,43 @@ class Signup extends Component {
   render() {
     const { email, password, userName } = this.state;
     return (
-      <div>
+      <div class="mui-container">
         <h1>Sign Up</h1>
 
         <form onSubmit={this.handleFormSubmit}>
-          <label>Email:</label>
-          <input
-            type="text"
-            name="email"
-            value={email}
-            onChange={this.handleChange}
-          />
-
-          <label>Name:</label>
+          <div className="mui-panel login" >
+            <label>Email:</label>
+            <input
+              type="text"
+              name="email"
+              value={email}
+              onChange={this.handleChange}
+            />
+            <br/>
+            <label>Name:</label>
             <input
               type="text"
               name="userName"
               value={userName}
               onChange={this.handleChange}
-          />
-
-          <label>Password:</label>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={this.handleChange}
-          />
-
-          <input type="submit" value="Signup" />
+            />
+            <br/>
+            <label>Password:</label>
+            <input
+              type="password"
+              name="password"
+              value={password}
+              onChange={this.handleChange}
+            />
+            <br/>
+          <div className="button-container">
+            <input 
+            class="mui-btn mui-btn--danger mui-btn--raised red"
+            type="submit" 
+            value="Signup" 
+            />
+          </div>
+          </div>
         </form>
 
         <p>Already have account?</p>

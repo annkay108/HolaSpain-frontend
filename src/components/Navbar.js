@@ -8,19 +8,21 @@ class Navbar extends Component {
 
     return (
       <nav className="navbar">
-        <Link to={"/"} id="home-btn">
+      <div>
+        <Link to={"/"} className="home-btn">
           <h4>Home</h4>
         </Link>
+      </div>
 
         {isLoggedIn ?
                   this.props.user.isAdmin?
                   (
                     <>
-                      <Link to={"/Addthenotice"}>
+                      <Link to={"/Addthenotice"} className="home-btn">
                         <h4>Add the Notice</h4>
                       </Link>
 
-                      <Link to={"/applicationList"}>
+                      <Link to={"/applicationList"} className="home-btn">
                         <h4> Applications </h4>
                       </Link>
                       <button onClick={logout}>Logout</button>
@@ -28,41 +30,39 @@ class Navbar extends Component {
                   ):
                 (
                   <>
-                    <Link to={"/user"}>
+                    <Link to={"/user"} className="home-btn">
                       <h4>User</h4>
                     </Link>
 
-                    <Link to={"/notice"}>
+                    <Link to={"/notice"} className="home-btn">
                       <h4> Notice </h4>
                     </Link>
 
-                    <Link to={"/startApplication"}>
+                    <Link to={"/startApplication"} className="home-btn">
                       <h4> Start Application </h4>
                     </Link>
 
-                    <Link to={"/applicationStatus"}>
+                    <Link to={"/applicationStatus"} className="home-btn">
                       <h4> Your Status </h4>
                     </Link>
 
-                    <Link to={"/myProfile"}>
+                    <Link to={"/myProfile"} className="home-btn">
                       <h4> My Profile</h4>
                     </Link>
-
-                    <h4>Find Contacts</h4>
-                    <button onClick={logout}>Logout</button>
+                    <button className="logout" onClick={logout}>Logout</button>
                   </>
         ) : (
-          <>
-            <Link to="/login">
+          <div className="auth-div">
+            <Link to="/login" className="home-btn">
               {" "}
               <button className="navbar-button">Login</button>{" "}
             </Link>
             <br />
-            <Link to="/signup">
+            <Link to="/signup" className="home-btn">
               {" "}
               <button className="navbar-button">Sign Up</button>{" "}
             </Link>
-          </>
+          </div>
         )}
       </nav>
     );
