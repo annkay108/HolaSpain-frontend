@@ -15,14 +15,14 @@ class ApplicationStatus extends Component {
 
     render() {
         return (
-            <div>
+            <div className="notice-container">
                 {
                     this.state.currentUser?
                     this.state.currentUser.hasApplied?
                     <div>
                         {this.state.currentUser.appStatus.map(el=>{
                             return(
-                                <div key={el._id}>
+                                <div key={el._id} className="user-notice">
                                    <h1>{el.title}</h1> 
                                    <p>{el.description}</p>
                                 </div>

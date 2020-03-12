@@ -14,11 +14,11 @@ class AddTheNotice extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="notice-container">
                 {this.state.noticeArray?
                     this.state.noticeArray.map(el =>{
                         return(
-                            <div key={el._id}>
+                            <div key={el._id} className="user-notice">
                                 <h3>{el.title}</h3>
                                 <p>{el.description}</p>
                             </div>

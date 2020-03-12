@@ -28,6 +28,7 @@ class AddTheNotice extends Component {
         noticeService
         .getAllNotice()
         .then(data => {
+          this.setState({noticeList: null});
             this.setState({ noticeList: data });
         })
       })
@@ -62,7 +63,7 @@ class AddTheNotice extends Component {
           <h1>Add the Notice</h1>
 
           <form onSubmit={this.handleFormSubmit}>
-          <div className ="mui-panel login">
+          <div className ="mui-panel login notice-form">
             <label>Title:</label>
             <input
               type="text"

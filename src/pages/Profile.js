@@ -19,15 +19,15 @@ class Profile extends Component {
 
     render() {
         return (
-            <div>
+            <div className="notice-container">
                 {
                     this.state.userList?
-                        <div>
+                        <div className="user-notice">
                             <img src={`${this.state.userList.imageUrl}`} alt="user"/>
-                            <h1>{this.state.userList.userName}</h1>
-                            <h2>{this.state.userList.number}</h2>
-                            <h2>{this.state.userList.city}</h2>
-                            <h2>{this.state.userList.email}</h2>
+                            <h1>Full Name: {this.state.userList.userName}</h1>
+                            <h2>Contact: {this.state.userList.number}</h2>
+                            <h2>City: {this.state.userList.city}</h2>
+                            <h2>Email: {this.state.userList.email}</h2>
                         </div>
                     :null
                 }

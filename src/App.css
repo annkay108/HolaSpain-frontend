@@ -2,6 +2,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: 'PT Sans', sans-serif; 
+  background-color: #d9e3f3;
 }
 
 .Home{
@@ -15,7 +16,7 @@ html, body {
 
 .Home h1{
   font-family: 'Pacifico', cursive;
-  color: #fa5e04;
+  color: #0466fa;
   font-size: 7em;
   text-align-last: right;
   margin-top: 10%;
@@ -36,12 +37,12 @@ nav.navbar {
   display: flex;
   justify-content: space-between;
   padding: 0px 20px;
-  background: #fa5e04; 
+  background: #0466fa; 
   align-items: center;
 }
 
 .logout{
-  color: #fa5e04;
+  color: #0466fa;
   background-color: rgb(255, 255, 255);
   height: 40px;
   width: 100px;
@@ -54,7 +55,7 @@ nav.navbar {
 
 .request-btn{
   font-size: 1em !important;
-  color: #fa5e04;
+  color: #0466fa;
 }
 
 .make-it-pretty{
@@ -65,10 +66,29 @@ nav.navbar {
   flex-grow: 1;
 }
 
+.notice-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.user-notice{
+  border: 1px solid #0466fa;
+  margin-top: 20px;
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: center;
+}
 .notice{
   display: flex;
 }
+
+.notice-form{
+  margin-left: 40px;
+  width: 70%;
+}
 .notice-item{
+  width: 29%;
   flex-grow: 1;
 }
 .searchBar{
@@ -103,7 +123,7 @@ nav.navbar {
 
 .user-button{
   color: white;
-  background-color: #fa5e04;
+  background-color: #0466fa;
   width: 150px;
   height: 40px;
 }
@@ -132,7 +152,7 @@ button.navbar-button {
 
 
 .red{
-  background-color:  #fa5e04 !important ;
+  background-color:  #0466fa !important ;
   color: #ffffff!important;
   width: 150px;
 }

@@ -66,29 +66,41 @@ class StartApplication extends Component {
                     <div>Thank you submitting your application you can see your application status <Link to="/applicationStatus">here</Link></div>
                     :<>
                         <h1>Start your application</h1>
-                        <h4>Download the form here</h4>
-                        <a href="./Visa.pdf" download="Visa">Download</a>
+                        <h4>Download the form here <a href="./Visa.pdf" download="Visa">Download</a></h4>
+                        <div className="mui-container notice-item">
                         <form onSubmit={this.handleFormSubmit}>
+                        <div className ="mui-panel">
                             <label>Upload your image here</label>
                             <input
                                 type="file"
                                 name="image"
                                 onChange={this.handleImageChange}
                             />
+                            <br/>
+                            <br/><br/>
                             <label>Upload your application form here</label>
                             <input
                                 type="file"
                                 name="application"
                                 onChange={this.handleApplicationChange}
                             />
+                            <br/><br/><br/>
                             <label>Upload your documents here</label>
                             <input
                                 type="file"
                                 name="document"
                                 onChange={this.handleDocumentChange}
                             />
-                            <input type="submit" value="Submit"/>
+                            <br/><br/><br/>
+                            <div className="button-container">
+                            <input 
+                            className="mui-btn mui-btn--danger mui-btn--raised red" 
+                            type="submit" 
+                            value="Submit"/>
+                            </div>
+                        </div>
                         </form>
+                        </div>
                     </>
                 }
             </div>
