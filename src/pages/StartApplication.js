@@ -63,7 +63,9 @@ class StartApplication extends Component {
             <div>
                 {
                     this.state.appStatus?
-                    <div>Thank you submitting your application you can see your application status <Link to="/applicationStatus">here</Link></div>
+                    <div>
+                        <h1>Thank you submitting your application you can see your application status <Link to="/applicationStatus">here</Link></h1>
+                    </div>
                     :<>
                         <h1>Start your application</h1>
                         <h4>Download the form here <a href="./Visa.pdf" download="Visa">Download</a></h4>

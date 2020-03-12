@@ -16,11 +16,15 @@ class ApplicationStatus extends Component {
     render() {
         return (
             <div className="notice-container">
+                <h1>Application Status</h1>
                 {
                     this.state.currentUser?
                     this.state.currentUser.hasApplied?
                     <div>
-                        {this.state.currentUser.appStatus.map(el=>{
+                        {this.state.currentUser.appStatus.length===0?
+                        <h1>Your Application is in process</h1>
+                        :
+                            this.state.currentUser.appStatus.map(el=>{
                             return(
                                 <div key={el._id} className="user-notice">
                                    <h1>{el.title}</h1> 
@@ -31,7 +35,7 @@ class ApplicationStatus extends Component {
                         )}
                     </div>
                     :<div>
-                        You have not applied for the application
+                        <h1>You have not applied for the application</h1>
                     </div>
                     :null
                 }
